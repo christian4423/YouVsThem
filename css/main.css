@@ -1,0 +1,245 @@
+body {
+    overflow: hidden;
+    text-shadow: none;
+}
+
+.bg {
+    width: 2000px;
+    height: 100%;
+    max-height: 640px;
+}
+
+#copyRight{
+    position: absolute;
+    bottom: 1%;
+    right:2%;
+    font-size: 1.5vw;
+    user-select: none;
+    color: white;
+    text-align: center;
+    font-family: Arial;
+    z-index:100;
+}
+
+.mask {
+    width: 1134px;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 2;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#player {
+    height: 200px;
+    width: 100px;
+    border: 3px solid blue;
+    background-color: blue;
+}
+
+#zombie {
+    height: 200px;
+    width: 100px;
+    border: 3px solid red;
+    background-color: red;
+    position: absolute;
+    z-index: 3;
+    bottom: 20px;
+    left: 0px;
+    box-shadow: 0px 5px 10px #000;
+}
+
+.controls {
+    position: absolute;
+    bottom: 10px;
+    z-index: 10;
+    margin-left: 10%;
+}
+
+.controller {
+    width: 150px;
+    height: 150px;
+    background-color: rgba(128,128,128,0.4);
+    display: inline-block;
+    font-size: 120px;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border-radius:100px;
+    text-shadow:none;
+}
+
+.fire {
+    width: 250px;
+    margin-left: 400px;
+    background-color: rgba(233,0,0,0.8);
+}
+
+.controller:hover {
+        width: 160px;
+    height: 160px;
+    box-shadow: 0px 0px 10px #fff;
+    text-shadow:0px 0px 10px #8c1717;
+}
+
+.bullet {
+    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(244,244,48,1) 100%); 
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(244,244,48,1))); 
+background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(244,244,48,1) 100%); 
+background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(244,244,48,1) 100%); 
+background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(244,244,48,1) 100%);
+background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(244,244,48,1) 100%);
+    
+    /*background-color:yellow;*/ 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#f4f430',GradientType=1 ); 
+
+
+    width: 10px;
+    height: 2px;
+    position: absolute;
+    top: 24%;
+}
+
+.shell {
+    background-color: yellow;
+    width: 10px;
+    height: 5px;
+    position: absolute;
+    top: 24%;
+}
+
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+#shell {
+    -webkit-animation-name: rotate;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transition-timing-function: linear;
+}
+
+.score {
+    position: absolute;
+    width: 200px;
+    height: 35px;
+    top: 10px;
+    left: 10px;
+    z-index: 15;
+    font-size: 30px;
+    text-shadow: none;
+    user-select: none;
+    color: white;
+    background-color: rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 20px #8c1717;
+    text-align: center;
+    border: 1px solid black;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.startButton {
+    width: 100%;
+    color: white;
+    position: absolute;
+    height: 7%;
+    top: 40%;
+    z-index: 50;
+    background-color: rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 10px #000;
+    text-align: center;
+    font-size: 40px;
+    text-shadow: none;
+    user-select: none;
+    font-family: 'Shadows Into Light', cursive;
+    visibility: visible;
+    font-family: 'Shadows Into Light', cursive;
+    visibility: visible;
+            text-shadow: 0px 0px 15px #8c1717;
+}
+
+    .startButton:hover {
+        box-shadow: 0px 0px 20px #8c1717;
+        text-shadow: 0px 0px 5px #8c1717;
+    }
+
+
+    #rain{
+        position:absolute;
+
+        width:1134px;
+        height:640px;
+        background-image:url('../lib/img/rain.png');
+        background-size:34080px 640px;
+        top:0px;
+        left:0px;
+        z-index:8;
+    }
+
+   #yourAudio{
+        position:absolute;
+        z-index:51;
+        top:5%;
+        left:90%;
+        width:100px;
+        
+        }
+
+   .title {
+    width: 100%;
+    color: white;
+    position: absolute;
+    height: 15%;
+    top: 15%;
+    z-index: 50;
+    background-color: rgba(0,0,0,0.0);
+    text-align: center;
+    font-size: 120px;
+    user-select: none;
+    font-family: 'Shadows Into Light', cursive;
+    visibility: visible;
+            text-shadow: 0px 0px 15px #8c1717;
+}
+
+.stats 
+{
+position: relative;
+top:-40px;
+left:-50px;
+width: 100px;
+height: auto;
+padding: 2px;
+background: rgba(255,255,255,0.5);
+text-align:center;
+box-shadow: 0px 0px 20px #8c1717;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+    font-family: Arial;
+    color:black;
+    font-size:1.5em;
+}
+
+.stats:after 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 4px 4px 0;
+border-color: rgba(255,255,255,0.5) transparent;
+    box-shadow: 0px 0px 20px #8c1717;
+display: block;
+width: 0;
+z-index: 1;
+margin-left: -4px;
+bottom: -4px;
+left: 53%;
+}

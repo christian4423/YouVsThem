@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>U-VS-THEM</title>
+        <meta name="viewport" content="width=1134,height=640, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+        <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light|Raleway' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+        <link rel="stylesheet" href="jqmbl/jquery.mobile-1.4.2.min.css">
+        <script src="jqmbl/jquery.js"></script>
+        <script src="jqmbl/jquery.mobile-1.4.2.min.js"></script>
+        <script src="script/main-scriptV0-1-3.js"></script>
+        
+        <script>
+
+            localStorage.setItem('facing', 'right')
+
+            $(function () {
+                $("#rain").bind("tap", tapHandler);
+
+                function tapHandler(event) {
+                        $('#player').append('<div id="bullet" class="bullet">');
+                        if (localStorage.getItem('facing') == "right") {
+                            $('.bullet').animate({ "left": "1500px" }, 700, "linear", function () {
+                                $(this).remove();
+                            });
+                        } else if ((localStorage.getItem('facing') == "left")) {
+                            $('.bullet').animate({ "right": "1500px" }, 700, "linear", function () {
+                                $(this).remove();
+                            });
+                        };
+                    };
+            });
+
+            $(function () {
+                $("#right").bind("tap", tapHandler);
+                function tapHandler(event) {
+                        var p = $("#player");
+                        var poff = p.offset();
+                        var pleft = poff.left;
+                        if (pleft < 962) {
+                            var element = document.getElementById("player");
+                            element.style.left = parseInt(element.style.left) + 25+ 'px';
+                            var bg = document.getElementById("bg");
+                            var zombz = document.getElementById("zombie");
+                            bg.style.left = parseInt(bg.style.left) - 25 + 'px';
+                            localStorage.setItem("facing", "right")
+                        } else { return false }
+                }
+
+
+
+
+
+                $(function () {
+                    $("#left").bind("tap", tapHandler);
+
+                    function tapHandler(event) {
+                            var p = $("#player");
+                            var poff = p.offset();
+                            var pleft = poff.left;
+                            if (pleft > 103) {
+                                var element = document.getElementById("player");
+                                element.style.left = parseInt(element.style.left) - 25 + 'px';
+                                var bg = document.getElementById("bg");
+                                bg.style.left = parseInt(bg.style.left) + 25 + 'px';
+                                localStorage.setItem("facing", "left")
+                            } else { return false }
+                    };
+                });
+            });
+            $(function () {
+                $(".startButton").bind("tap", tapHandler);
+
+                function tapHandler(event) {
+                    $(this).css("visibility", "hidden")
+                    $('.title').css("visibility", "hidden")
+                    setInterval(function () { zombieSpawning() }, 1500);
+                };
+            });
+        </script>
+        
+	</head>
+	<body onload="docReady()">
+
+        <div class="mask">
+            <div class="title">YOU vs THEM</div>
+            <div class="startButton">Start</div>
+            <div class="controls">
+                <div id="left" class="controller"><</div>
+                <div  id="right" class="controller">></div>
+            </div>
+            <div id="rain"></div>
+            <div onclick="score()" id="player" style="position:absolute;left:100px;bottom:20px;z-index:3;"></div>
+            <div id="zom" style="position:absolute;left:0px;top:0px;z-index:1;" class="bg" />
+            <img onclick=""src="lib/img/lvlBG.png" id="bg" style="position:absolute;left:0px;top:0px;z-index:1;" class="bg" />
+            <audio id='yourAudio' loop="loop" autoplay="autoplay">
+                <source src="lib/audio/looping-drum.mp3" type='audio/mpeg; codecs="mp3"'>
+            </audio>
+        </div>
+        <div id="copyRight" onload="copyRight()"><span id="copyRight-span"></span>Christian Matsoukis &copy; - V. 0.1.3 - Beta</div>
+	</body>
+</html>
