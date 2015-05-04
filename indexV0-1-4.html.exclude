@@ -3,8 +3,6 @@
     This version is going to attempt to fix the bullet error with the interval running at all times. 
     This should speed up the game and save memory. 
 
-    After this fix, version 0.1.5 will work on a more advanced collision detection.
-
     Author: Christian Matsoukis
     Date:   05/01/2015
 -->

@@ -1,25 +1,9 @@
 <!DOCTYPE html>
 <!--
-    This version is going to attempt to fix the bullet error with the interval running at all times. 
-    This should speed up the game and save memory. 
-
-    After this fix, version 0.1.5 will work on a more advanced collision detection.
-
     Author: Christian Matsoukis
     Date:   05/01/2015
 -->
 
-<!--
-    Change Log: 
-
-Content: 
-    - <title> changed from "U-VS-THEM" => "YOU-VS-THEM"
-
-Javascript: 
-    - Took code out of touch controls and had it go to the approiate function instead of rewriting code. 
-    - Renamed fire() function to bulletSpawn().
-
--->
 <html>
 	<head>
 		<title>YOU-VS-THEM</title>
@@ -31,11 +15,11 @@ Javascript:
         <link rel="stylesheet" href="jqmbl/jquery.mobile-1.4.2.min.css">
         <script src="jqmbl/jquery.js"></script>
         <script src="jqmbl/jquery.mobile-1.4.2.min.js"></script>
-        <script src="script/main-scriptV0-1-4.js"></script>
+        <script src="script/main-script.js"></script>
         
 	</head>
 	<body onload="docReady(), copyRight()">
-
+        <div id="rain"></div>
         <div class="mask">
             <div class="title">YOU vs THEM</div>
             <div class="startButton">Start</div>
@@ -43,7 +27,7 @@ Javascript:
                 <div id="left" class="controller"><</div>
                 <div  id="right" class="controller">></div>
             </div>
-            <div id="rain"></div>
+
             <div onclick="score()" id="player" style="position:absolute;left:100px;bottom:20px;z-index:3;"></div>
             <div id="zom" style="position:absolute;left:0px;top:0px;z-index:1;" class="bg" />
             <img onclick=""src="lib/img/lvlBG.png" id="bg" style="position:absolute;left:0px;top:0px;z-index:1;" class="bg" />
