@@ -14,13 +14,16 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
         <link rel="stylesheet" href="jqmbl/jquery.mobile-1.4.2.min.css">
         <script src="jqmbl/jquery.js"></script>
+        <script src="script/jqueryColor2.1.2.js"></script>
         <script src="jqmbl/jquery.mobile-1.4.2.min.js"></script>
         <script src="script/main-script.js"></script>
         
 	</head>
 	<body onload="docReady(), copyRight()">
-        <div id="rain"></div>
+        <!--<div id="rain"></div>-->
         <div class="mask">
+            <meter id="playerHealth" min="0" max="1" low=".25" high=".75" optimum="1.0" value=".90"></meter>
+            <div class="zombieCount"><div id="zclable">ZC</div><div id="zc"></div></div>
             <div class="title">YOU vs THEM</div>
             <div class="startButton">Start</div>
             <div class="controls">
@@ -28,13 +31,13 @@
                 <div  id="right" class="controller">></div>
             </div>
 
-            <div onclick="score()" id="player" style="position:absolute;left:100px;bottom:20px;z-index:3;"></div>
+            <div id="player" class="player" onclick="playerHit()" style="position:absolute;left:100px;bottom:20px;z-index:3;"></div>
             <div id="zom" style="position:absolute;left:0px;top:0px;z-index:1;" class="bg" />
-            <img onclick=""src="lib/img/lvlBG.png" id="bg" style="position:absolute;left:0px;top:0px;z-index:1;" class="bg" />
+            <img onclick="" src="lib/img/lvlBG.png" id="bg" style="    position: absolute;left: 0px;top: 0px;z-index: 1;" class="bg" />
             <audio id='yourAudio' loop="loop" autoplay="autoplay">
                 <source src="lib/audio/looping-drum.mp3" type='audio/mpeg; codecs="mp3"'>
             </audio>
         </div>
-        <div id="copyRight"><span id="copyRight-span"></span>Christian Matsoukis &copy; - V. 0.1.4 - Beta - {fixing bullets collision detection}</div>
+        <div id="copyRight"><span id="copyRight-span"></span>Christian Matsoukis &copy; - V. 0.1.5 - Beta - {Adding player health and zombie attack}</div>
 	</body>
 </html>

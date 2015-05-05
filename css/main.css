@@ -1,34 +1,37 @@
 body {
     overflow: hidden;
     text-shadow: none;
+    background-color: black !important;
 }
 
 .bg {
     width: 2000px;
     height: 100%;
     max-height: 640px;
+
 }
 
-#copyRight{
+#copyRight {
     position: absolute;
     bottom: 1%;
-    right:2%;
+    right: 2%;
     font-size: 1.5vw;
     user-select: none;
     color: white;
     text-align: center;
     font-family: Arial;
-    z-index:100;
+    z-index: 100;
 }
 
 .mask {
     width: 1134px;
-    height: 100vh;
+    height: 640px;
     overflow: hidden;
     z-index: 2;
     position: absolute;
     top: 0px;
     left: 0px;
+    background-color: #fff;
 }
 
 #player {
@@ -50,11 +53,17 @@ body {
     box-shadow: 0px 5px 10px #000;
 }
 
+.zhead {
+    height: 50px;
+    background-color: gr<br class="Apple-interchange-newline">een;
+}
+
 .controls {
     position: absolute;
     bottom: 10px;
     z-index: 10;
     margin-left: 10%;
+        cursor:pointer;
 }
 
 .controller {
@@ -67,66 +76,34 @@ body {
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
-    border-radius:100px;
-    text-shadow:none;
+    border-radius: 100px;
+    text-shadow: none;
 }
 
-.fire {
-    width: 250px;
-    margin-left: 400px;
-    background-color: rgba(233,0,0,0.8);
-}
 
-.controller:hover {
+    .controller:hover {
         width: 160px;
-    height: 160px;
-    box-shadow: 0px 0px 10px #fff;
-    text-shadow:0px 0px 10px #8c1717;
-}
+        height: 160px;
+        box-shadow: 0px 0px 10px #fff;
+        text-shadow: 0px 0px 10px #8c1717;
+    }
 
 .bullet {
-    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(244,244,48,1) 100%); 
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(244,244,48,1))); 
-background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(244,244,48,1) 100%); 
-background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(244,244,48,1) 100%); 
-background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(244,244,48,1) 100%);
-background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(244,244,48,1) 100%);
-    
-    /*background-color:yellow;*/ 
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#f4f430',GradientType=1 ); 
-
-
+    /*background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(244,244,48,1) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(244,244,48,1)));
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(244,244,48,1) 100%);
+    background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(244,244,48,1) 100%);
+    background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(244,244,48,1) 100%);
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(244,244,48,1) 100%);*/
+    background-color: yellow;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#f4f430',GradientType=1 );
     width: 10px;
     height: 2px;
     position: absolute;
     top: 24%;
+    z-index: 7;
 }
 
-.shell {
-    background-color: yellow;
-    width: 10px;
-    height: 5px;
-    position: absolute;
-    top: 24%;
-}
-
-
-@-webkit-keyframes rotate {
-    from {
-        -webkit-transform: rotate(0deg);
-    }
-
-    to {
-        -webkit-transform: rotate(360deg);
-    }
-}
-
-#shell {
-    -webkit-animation-name: rotate;
-    -webkit-animation-duration: 0.5s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-transition-timing-function: linear;
-}
 
 .score {
     position: absolute;
@@ -147,6 +124,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 }
 
 .startButton {
+    cursor:pointer;
     width: 100%;
     color: white;
     position: absolute;
@@ -161,9 +139,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     user-select: none;
     font-family: 'Shadows Into Light', cursive;
     visibility: visible;
-    font-family: 'Shadows Into Light', cursive;
-    visibility: visible;
-            text-shadow: 0px 0px 15px #8c1717;
+    text-shadow: 0px 0px 15px #8c1717;
 }
 
     .startButton:hover {
@@ -172,28 +148,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     }
 
 
-    #rain{
-        position:absolute;
-        display:none;
-        width:1134px;
-        height:640px;
-        background-image:url('../lib/img/rain.png');
-        background-size:34080px 640px;
-        top:0px;
-        left:0px;
-        z-index:8;
-    }
+#rain {
+    position: absolute;
+    display: none;
+    width: 1134px;
+    height: 640px;
+    background-image: url('../lib/img/rain.png');
+    background-size: 34080px 640px;
+    top: 0px;
+    left: 0px;
+    z-index: 8;
+}
 
-   #yourAudio{
-        position:absolute;
-        z-index:51;
-        top:5%;
-        left:90%;
-        width:100px;
-        
-        }
+#yourAudio {
+    position: absolute;
+    z-index: 51;
+    top: 5%;
+    left: 90%;
+    width: 100px;
+}
 
-   .title {
+.title {
     width: 100%;
     color: white;
     position: absolute;
@@ -206,44 +181,139 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     user-select: none;
     font-family: 'Shadows Into Light', cursive;
     visibility: visible;
-            text-shadow: 0px 0px 15px #8c1717;
+    text-shadow: 0px 0px 15px #8c1717;
 }
 
-.stats 
-{
+    /*///////////////////////
+   ///                   ///
+  ///    Start Stats    ///
+ ///                   ///
+///////////////////////*/
 
-    display:none;
-position: relative;
-top:-40px;
-left:-50px;
-width: 100px;
-height: auto;
-padding: 2px;
-background: rgba(255,255,255,0.5);
-text-align:center;
-box-shadow: 0px 0px 20px #8c1717;
--webkit-border-radius: 3px;
--moz-border-radius: 3px;
-border-radius: 3px;
-    font-family: Arial;
-    color:black;
-    font-size:1.5em;
-}
 
-.stats:after 
-{
-
-        display:none;
-content: '';
-position: absolute;
-border-style: solid;
-border-width: 4px 4px 0;
-border-color: rgba(255,255,255,0.5) transparent;
+.stats {
+    display: none;
+    position: relative;
+    top: -40px;
+    left: -50px;
+    width: 100px;
+    height: auto;
+    padding: 2px;
+    background: rgba(255,255,255,0.5);
+    text-align: center;
     box-shadow: 0px 0px 20px #8c1717;
-display: block;
-width: 0;
-z-index: 1;
-margin-left: -4px;
-bottom: -4px;
-left: 53%;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-family: Arial;
+    color: black;
+    font-size: 1.5em;
+}
+
+    .stats:after {
+        display: none;
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-width: 4px 4px 0;
+        border-color: rgba(255,255,255,0.5) transparent;
+        box-shadow: 0px 0px 20px #8c1717;
+        display: block;
+        width: 0;
+        z-index: 1;
+        margin-left: -4px;
+        bottom: -4px;
+        left: 53%;
+    }
+
+
+
+
+
+    /*///////////////////////
+   ///                   ///
+  /// Start ZombieMeter ///
+ ///                   ///
+///////////////////////*/
+
+
+
+
+    .zombieCount {
+    position: absolute;
+    top: 10px;
+    right: 55%;
+    border: 1px solid black;
+    z-index: 9;
+    text-shadow: none;
+    color: white;
+    text-align: center;
+        user-select: none;
+    background-color: rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 20px #8c1717;
+    border: 1px solid black;
+    border-radius: 0px;
+}
+
+#zclable {
+    border-bottom:3px solid black;
+    width: 100%;
+    display: inline-block;
+}
+
+#zc {
+    background-color: white;
+    color: black;
+    width: 100%;
+    display: inline-block;
+}
+
+
+
+
+
+
+    /*///////////////////////
+   ///                   ///
+  ///  Start HealthBar  ///
+ ///                   ///
+///////////////////////*/
+
+
+
+
+
+
+
+
+
+
+
+meter::-webkit-meter-bar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255,255,255,0.0);
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+    border-radius: 3px;
+    z-index: 10;
+    height: 20px;
+    width: 50%;
+    user-select: none;
+    background-color: rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 20px #8c1717;
+    border: 1px solid black;
+    border-radius: 0px;
+}
+
+meter::-webkit-meter-optimum-value {
+    background: #86CC00; /* Green */
+}
+
+meter::-webkit-meter-suboptimum-value {
+    background: #FFDB1A; /* Yellow */
+}
+
+meter::-webkit-meter-even-less-good-value {
+    background: #8c1717; /* Red */
 }
